@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.steampunk</groupId>
+  <artifactId>solarsystem</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <name>Solar System Selenium Tests</name>
+  <description>Selenium tests for the solar-system demo.</description>
+  <url>https://www.steampunk.com/</url>
+  <inceptionYear>2020</inceptionYear>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <jdk.version>11</jdk.version>
+
+    <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+    <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
+
+    <junit.version>5.7.0</junit.version>
+    <selenium.version>3.141.59</selenium.version>
+    <selenium.jupiter.version>3.3.5</selenium.jupiter.version>
+  </properties>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${maven.compiler.plugin.version}</version>
+          <configuration>
+            <source>${jdk.version}</source>
+            <target>${jdk.version}</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${maven.surefire.plugin.version}</version>
+          <configuration>
+            <systemPropertyValues>
+              <targetUrl>${targetUrl}</targetUrl>
+            </systemPropertyValues>
+            <properties>
+              <configurationParameters>
+                junit.jupiter.execution.parallel.enabled = true
+                junit.jupiter.execution.parallel.mode.default = concurrent
+              </configurationParameters>
+            </properties>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <version>${junit.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>${selenium.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.github.bonigarcia</groupId>
+        <artifactId>selenium-jupiter</artifactId>
+        <version>${selenium.jupiter.version}</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+    </dependency>
+      <dependency>
+        <groupId>io.github.bonigarcia</groupId>
+        <artifactId>selenium-jupiter</artifactId>
+      </dependency>
+  </dependencies>
+
+  <licenses>
+    <license>
+      <name>Apache License 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <organization>
+    <name>Steampunk</name>
+    <url>https://www.steampunk.com/</url>
+  </organization>
+  <developers>
+    <developer>
+      <id>OtherDevOpsGene</id>
+      <name>Gene Gotimer</name>
+      <email>eugene.gotimer@steampunk.com</email>
+    </developer>
+  </developers>
+
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/SteampunkFoundry/solarsystem/issues</url>
+  </issueManagement>
+  <scm>
+    <connection>scm:git:git@github.com:SteampunkFoundry/solarsystem.git</connection>
+    <developerConnection>scm:git:git@github.com:SteampunkFoundry/solarsystem.git</developerConnection>
+    <url>https://github.com/SteampunkFoundry/solarsystem</url>
+  </scm>
+</project>
