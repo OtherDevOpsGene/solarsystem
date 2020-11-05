@@ -31,9 +31,9 @@ To stop all the containers:
 docker-compose stop
 ```
 
-## Clearing
+## Cleaning up
 
-To clear the database and start fresh, stop the containers and then delete the `mongodb/data` directory.
+To clear the data from the database, stop the containers and then delete the `mongodb/data` directory.
 
 To cleanup the containers when you are done:
 

@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  hub:
+    image: selenium/hub:3.141.59
+    ports:
+      - "4444:4444"
+
+  firefox81:
+    image: selenium/node-firefox:3.141.59-20201010
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - hub
+    environment:
+      HUB_HOST: hub
+
+  firefox80:
+    image: selenium/node-firefox:3.141.59-20200826
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - hub
+    environment:
+      HUB_HOST: hub
+
+  chrome86:
+    image: selenium/node-chrome:3.141.59-20201010
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - hub
+    environment:
+      HUB_HOST: hub
+
+  chrome85:
+    image: selenium/node-chrome:3.141.59-20200826
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - hub
+    environment:
+      HUB_HOST: hub
