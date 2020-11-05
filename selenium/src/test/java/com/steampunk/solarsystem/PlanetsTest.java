@@ -2,7 +2,6 @@ package com.steampunk.solarsystem;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.openqa.selenium.remote.DesiredCapabilities.firefox;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -30,30 +29,31 @@ public class PlanetsTest {
     private static final String HUB_URL = "http://hub:4444/wd/hub";
 
     @Test
-    public void testTitle(@DriverCapabilities({"browserName=chrome", "version=86.0.4240.75"}) RemoteWebDriver driver) {
+    void pageTitle(@DriverCapabilities({ "browserName=chrome", "version=86.0.4240.75" }) RemoteWebDriver driver) {
         driver.get(TARGET_URL);
 
         assertEquals("Planets in the Solar System", driver.getTitle(), "Unexpected page title");
     }
 
     @Test
-    public void testTable(@DriverCapabilities({"browserName=chrome", "version=85.0.4183.83"}) RemoteWebDriver driver) {
+    void tableHeaders(@DriverCapabilities({ "browserName=chrome", "version=85.0.4183.83" }) RemoteWebDriver driver) {
         driver.get(TARGET_URL);
 
         assertEquals("Name", driver.findElement(By.id("name")).getText(), "Unexpected first column heading");
         assertEquals("Radius\n(km)", driver.findElement(By.id("radius")).getText(), "Unexpected second column heading");
-        assertEquals("Year\n(Earth days)", driver.findElement(By.id("year")).getText(), "Unexpected third column heading");
+        assertEquals("Year\n(Earth days)", driver.findElement(By.id("year")).getText(),
+                "Unexpected third column heading");
     }
 
     @Test
-    public void testEarth(@DriverCapabilities({"browserName=firefox", "version=80.0"}) RemoteWebDriver driver) {
+    void earthListed(@DriverCapabilities({ "browserName=firefox", "version=80.0" }) RemoteWebDriver driver) {
         driver.get(TARGET_URL);
 
         assertEquals("365", driver.findElement(By.xpath("//tr[td='Earth']/td[3]")).getText(), "Unexpected Earth year");
     }
 
     @Test
-    public void testPluto(@DriverCapabilities({"browserName=firefox", "version=81.0.1"}) RemoteWebDriver driver) {
+    void plutoIsPlanet(@DriverCapabilities({ "browserName=firefox", "version=81.0.1" }) RemoteWebDriver driver) {
         driver.get(TARGET_URL);
 
         assertTrue(!driver.findElements(By.xpath("//tr[td='Pluto']/td[1]")).isEmpty(), "Pluto is a Planet");
