@@ -16,7 +16,7 @@ import io.github.bonigarcia.seljup.SeleniumJupiter;
  * Selenium test for the web site.
  */
 @ExtendWith(SeleniumJupiter.class)
-public class PlanetsTest {
+public class PlanetsIT {
     /**
      * URL to start testing at, passed in as a system property.
      */
