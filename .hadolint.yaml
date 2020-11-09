@@ -1,0 +1,6 @@
+ignored:
+  - DL3018
+  - SC2086
+
+trustedRegistries:
+  - docker.io
