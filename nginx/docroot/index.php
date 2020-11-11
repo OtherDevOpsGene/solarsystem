@@ -13,7 +13,7 @@
     <?php
       error_reporting(E_ALL);
       try {
-        $mongo = new MongoDB\Driver\Manager('mongodb://root:hunter2@mongo');
+        $mongo = new MongoDB\Driver\Manager('mongodb://mongo');
         $query = new MongoDB\Driver\Query([]);
         $docs = $mongo->executeQuery("solarsystemdb.planets", $query);
 

@@ -12,7 +12,6 @@ repos:
 -   repo: https://github.com/IamTheFij/docker-pre-commit
     rev: v2.0.0
     hooks:
-    -   id: docker-compose-check
     -   id: hadolint
 -   repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
     rev: v1.6.1
