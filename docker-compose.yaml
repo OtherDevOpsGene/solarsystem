@@ -11,6 +11,8 @@ services:
 
   php:
     build: php
+    expose:
+      - "9000"
     volumes:
       - ./nginx/docroot:/docroot
       - ./php/log.conf:/usr/local/etc/php-fpm.d/zz-log.conf
@@ -23,10 +25,10 @@ services:
       - ./mongodb/data/db:/data/db
       - ./mongodb/initdb:/docker-entrypoint-initdb.d
 
-  mongo-express:
+  mongoexpress:
     image: mongo-express:latest
-    restart: on-failure
     depends_on:
       - mongo
+    restart: on-failure
     ports:
       - "8080:8081"

@@ -41,3 +41,7 @@ To cleanup the containers when you are done:
 ```bash
 docker-compose rm
 ```
+
+## Architecture
+
+![Architecture](architecture.svg?raw=true "Architecture of networks")
