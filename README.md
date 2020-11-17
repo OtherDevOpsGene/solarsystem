@@ -20,9 +20,11 @@ Visit <http://localhost:8080/> to access Mongo Express.
 
 ## Adding data
 
-* Visit <http://localhost:8080/db/solarsystemdb/planets> to see the `planets` collection in the `solarsystemdb` database
+* Visit <http://localhost:8080/db/solarsystemdb/planets> to see the `planets`
+  collection in the `solarsystemdb` database
 * Click on `New Document`.
-* Copy and paste the contents of [pluto.json](mongodb/pluto.json) and then click `Save`.
+* Copy and paste the contents of [pluto.json](mongodb/pluto.json) and then click
+  `Save`.
 
 ## Stopping
 
@@ -34,7 +36,8 @@ docker-compose stop
 
 ## Cleaning up
 
-To clear the data from the database, stop the containers and then delete the `mongodb/data` directory.
+To clear the data from the database, stop the containers and then delete the
+`mongodb/data` directory.
 
 To cleanup the containers when you are done:
 
