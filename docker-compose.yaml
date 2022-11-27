@@ -22,7 +22,7 @@ services:
     expose:
       - "27017"
     volumes:
-      - ./mongodb/data/db:/data/db
+      - mongodata:/data/db
       - ./mongodb/initdb:/docker-entrypoint-initdb.d
 
   mongoexpress:
@@ -32,3 +32,6 @@ services:
     restart: on-failure
     ports:
       - "8080:8081"
+
+volumes:
+  mongodata:
