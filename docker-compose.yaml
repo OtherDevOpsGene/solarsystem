@@ -29,7 +29,7 @@ services:
     image: mongo-express:latest
     depends_on:
       - mongo
-    restart: on-failure
+    restart: unless-stopped
     ports:
       - "8080:8081"
 
