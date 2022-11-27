@@ -3,27 +3,27 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.steampunk</groupId>
+  <groupId>dev.otherdevopsgene</groupId>
   <artifactId>solarsystem</artifactId>
-  <version>1.0</version>
+  <version>2.0</version>
   <packaging>jar</packaging>
 
   <name>Solar System Selenium Tests</name>
   <description>Selenium tests for the solar-system demo.</description>
-  <url>https://www.steampunk.com/</url>
+  <url>https://github.com/OtherDevOpsGene/solarsystem</url>
   <inceptionYear>2020</inceptionYear>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <jdk.version>11</jdk.version>
+    <jdk.version>17</jdk.version>
 
-    <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+    <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
     <maven.failsafe.plugin.version>2.22.2</maven.failsafe.plugin.version>
 
-    <junit.version>5.7.0</junit.version>
-    <selenium.version>3.141.59</selenium.version>
-    <selenium.jupiter.version>3.3.5</selenium.jupiter.version>
+    <junit.version>5.9.1</junit.version>
+    <selenium.version>4.6.0</selenium.version>
+    <selenium.jupiter.version>4.3.2</selenium.jupiter.version>
   </properties>
 
   <build>
@@ -57,7 +57,8 @@
             <properties>
               <configurationParameters>
                 junit.jupiter.execution.parallel.enabled = true
-                junit.jupiter.execution.parallel.mode.default = concurrent
+                junit.jupiter.execution.parallel.mode.default = same_thread
+                junit.jupiter.execution.parallel.mode.classes.default = concurrent
               </configurationParameters>
             </properties>
           </configuration>
@@ -125,25 +126,21 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-  <organization>
-    <name>Steampunk</name>
-    <url>https://www.steampunk.com/</url>
-  </organization>
   <developers>
     <developer>
       <id>OtherDevOpsGene</id>
       <name>Gene Gotimer</name>
-      <email>eugene.gotimer@steampunk.com</email>
+      <email>otherdevopsgene@portinfo.com</email>
     </developer>
   </developers>
 
   <issueManagement>
     <system>GitHub</system>
-    <url>https://github.com/SteampunkFoundry/solarsystem/issues</url>
+    <url>https://github.com/OtherDevOpsGene/solarsystem/issues</url>
   </issueManagement>
   <scm>
-    <connection>scm:git:git@github.com:SteampunkFoundry/solarsystem.git</connection>
-    <developerConnection>scm:git:git@github.com:SteampunkFoundry/solarsystem.git</developerConnection>
-    <url>https://github.com/SteampunkFoundry/solarsystem</url>
+    <connection>scm:git:git@github.com:OtherDevOpsGene/solarsystem.git</connection>
+    <developerConnection>scm:git:git@github.com:OtherDevOpsGene/solarsystem.git</developerConnection>
+    <url>https://github.com/OtherDevOpsGene/solarsystem</url>
   </scm>
 </project>

@@ -1,4 +1,4 @@
-package com.steampunk.solarsystem;
+package dev.otherdevopsgene.solarsystem;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -18,19 +18,17 @@ public class PlanetsIT {
   private static final String TARGET_URL = System.getProperty("targetUrl");
 
   /** URL for the Selenium Grid hub. */
-  @DriverUrl private static final String HUB_URL = "http://hub:4444/wd/hub";
+  @DriverUrl private static final String HUB_URL = "http://selenium-hub:4444";
 
   @Test
-  void pageTitle(
-      @DriverCapabilities({"browserName=chrome", "version=86.0.4240.75"}) RemoteWebDriver driver) {
+  void pageTitle(@DriverCapabilities({"browserName=chrome"}) RemoteWebDriver driver) {
     driver.get(TARGET_URL);
 
     assertEquals("Planets in the Solar System", driver.getTitle(), "Unexpected page title");
   }
 
   @Test
-  void tableHeaders(
-      @DriverCapabilities({"browserName=chrome", "version=85.0.4183.83"}) RemoteWebDriver driver) {
+  void tableHeaders(@DriverCapabilities({"browserName=firefox"}) RemoteWebDriver driver) {
     driver.get(TARGET_URL);
 
     assertEquals(
@@ -46,8 +44,7 @@ public class PlanetsIT {
   }
 
   @Test
-  void earthListed(
-      @DriverCapabilities({"browserName=firefox", "version=80.0"}) RemoteWebDriver driver) {
+  void earthListed(@DriverCapabilities({"browserName=MicrosoftEdge"}) RemoteWebDriver driver) {
     driver.get(TARGET_URL);
 
     assertEquals(
@@ -57,8 +54,7 @@ public class PlanetsIT {
   }
 
   @Test
-  void plutoIsPlanet(
-      @DriverCapabilities({"browserName=firefox", "version=81.0.1"}) RemoteWebDriver driver) {
+  void plutoIsPlanet(@DriverCapabilities({"browserName=chrome"}) RemoteWebDriver driver) {
     driver.get(TARGET_URL);
 
     assertTrue(
