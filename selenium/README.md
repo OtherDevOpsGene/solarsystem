@@ -19,11 +19,13 @@ Visit <http://localhost:4444/grid/console/>.
 To run the Selenium tests, you can use Maven on a container.
 
 ```powershell
-docker run -it --rm --name maven -v ${PWD}:/usr/src/maven -v ${HOME}/.m2:/root/.m2 --workdir /usr/src/maven --network selenium_default maven:3.8.6-eclipse-temurin-17 mvn verify -DtargetUrl=http://44.55.66.77/
+docker run -it --rm --network selenium_default --volume ${PWD}:/usr/src/maven \
+    --volume ${HOME}/.m2:/root/.m2 --workdir /usr/src/maven \
+    maven:3.8.6-eclipse-temurin-17 mvn verify -DtargetUrl=http://555.666.777.888/
 ```
 
-Replace `http://44.55.66.77/` with the URL of your web site using the external
-IP address.
+Replace `http://555.666.777.888/` with the URL of your web site using the
+external IP address.
 
 ## Stopping
 

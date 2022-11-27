@@ -1,6 +1,7 @@
 # solarsystem
 
-A demo using multiple Docker containers. Tests run from the [selenium directory](selenium/README.md).
+A demo using multiple Docker containers. Tests run from the [selenium
+directory](selenium/README.md).
 
 ## Starting
 
@@ -42,7 +43,7 @@ To clear the data from the database, stop the containers and then delete the
 To cleanup the containers when you are done:
 
 ```bash
-docker-compose rm
+docker-compose rm -f
 ```
 
 ## Architecture
